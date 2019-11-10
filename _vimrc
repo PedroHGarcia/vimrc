@@ -12,6 +12,7 @@ call vundle#begin()                       " starts check for plugins.
 """""""""""""""""""
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
@@ -116,3 +117,9 @@ set laststatus=2
 set noshowmode 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#bufferline#enabled = 1
+
+"""""""""""""""""""
+" => TAGBAR 
+"""""""""""""""""""
+" Automatically opens Tagbar on start.
+autocmd VimEnter * Tagbar
