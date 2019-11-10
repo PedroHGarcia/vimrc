@@ -45,28 +45,28 @@ set scrolloff=4                           " Amount of lines to keep between curs
 set termencoding=utf-8
 set encoding=utf-8
 
-" Use persistent history.
+" Creates /.vim/undo_dir folder for storing undofiles.
 if !isdirectory($HOME."/.vim")
         call mkdir($HOME."/.vim", "", 0770)
 endif
 if !isdirectory($HOME."/.vim/undo_dir")
         call mkdir($HOME."/.vim/undo_dir", "", 0700)
 endif
-set undodir=~/.vim/undo_dir
-set undofile
+set undodir=~/.vim/undo_dir               " Uses the previously created folder for storing undofiles.
+set undofile                              " Turns on permanent undo storage
 
-" Stops vim from making those annoying backups on the same folder.
-set nobackup
-set noswapfile
+set nobackup                              " No backups
+set noswapfile                            " No swapfiles
 
 runtime macros/matchit.vim                " Pressing % on 'if' jumps to 'else'.
 
+" Remaps ; to : and vice-versa.
 nnoremap ; :
 nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
-:inoremap ii <Esc>
+:inoremap ii <Esc>                        " Remaps ii to Escape for efficiency.
 
 set incsearch                             " Incremental search.
 set hlsearch                              " Highlights search matches.
