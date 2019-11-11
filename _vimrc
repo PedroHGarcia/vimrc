@@ -122,4 +122,6 @@ let g:airline#extensions#bufferline#enabled = 1
 " => TAGBAR 
 """""""""""""""""""
 " Automatically opens Tagbar on start.
-autocmd VimEnter * Tagbar
+autocmd VimEnter * nested :call tagbar#autoopen(1)
+let g:tagbar_width = 30                   " Sets tagbar's max window width
+let g:tagbar_compact = 1                  " Removes '? for help' at the top of the Tagbar window.
